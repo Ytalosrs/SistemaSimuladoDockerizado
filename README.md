@@ -1,4 +1,4 @@
-```md
+
 # Sistema Simulado Dockerizado
 
 Aplicação web para realização e correção de simulados, containerizada com Docker, construída em **Next.js** (App Router) e TypeScript. [page:1]
@@ -150,6 +150,3 @@ Os principais são:
 
 Defina aqui a licença do projeto (por exemplo, MIT, Apache 2.0, etc.).  
 Enquanto não houver arquivo `LICENSE`, considere este projeto em estado de rascunho/estudo. [page:1]
-```
-
-Quer que eu adapte o README para inglês também ou focar só em PT-BR mesmo?  
