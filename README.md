@@ -1,5 +1,3 @@
-Segue um README em português que você pode colar no repositório e ajustar conforme evoluir o projeto. [github](https://github.com/Ytalosrs/SistemaSimuladoDockerizado)
-
 ```md
 # Sistema Simulado Dockerizado
 
