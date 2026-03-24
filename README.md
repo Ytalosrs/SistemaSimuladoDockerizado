@@ -148,5 +148,65 @@ Os principais são:
 
 ## Licença
 
+
+---
+
+## Prompt de Setup para IDEs (Cursor, Windsurf, Copilot, etc.)
+
+Copie e cole o prompt abaixo no chat da sua IDE com suporte a IA para configurar o projeto automaticamente:
+
+```
+Você é um assistente de configuração de ambiente de desenvolvimento.
+Siga exatamente as etapas abaixo para configurar o projeto SistemaSimuladoDockerizado:
+
+1. CLONE O REPOSITÓRIO
+   - Execute: git clone https://github.com/Ytalosrs/SistemaSimuladoDockerizado.git
+   - Entre na pasta: cd SistemaSimuladoDockerizado
+
+2. VARIÁVEIS DE AMBIENTE
+   - Crie um arquivo .env na raiz do projeto baseado no .env.example (se existir)
+   - Defina a variável DATABASE_URL apontando para o banco do Docker Compose
+     Exemplo para PostgreSQL: DATABASE_URL="postgresql://user:password@localhost:5432/simulado"
+   - Ajuste as demais variáveis conforme necessário
+
+3. SUBA OS CONTAINERS DOCKER
+   - Certifique-se de que o Docker Desktop (ou Docker Engine) está em execução
+   - Execute: docker-compose up -d --build
+   - Aguarde todos os serviços ficarem healthy antes de prosseguir
+   - Verifique o status com: docker-compose ps
+
+4. INSTALE AS DEPENDÊNCIAS DO NODE
+   - Execute: npm install
+   (Alternativas: yarn | pnpm install | bun install)
+
+5. GERE O CLIENTE PRISMA
+   - Execute: npx prisma generate
+
+6. EXECUTE AS MIGRAÇÕES DO BANCO
+   - Execute: npx prisma migrate dev
+   - Se for o primeiro setup e não existirem migrações, use:
+     npx prisma db push
+
+7. (OPCIONAL) VISUALIZE O BANCO DE DADOS
+   - Execute: npx prisma studio
+   - Acesse em: http://localhost:5555
+
+8. INICIE O SERVIDOR DE DESENVOLVIMENTO
+   - Execute: npm run dev
+   - Acesse a aplicação em: http://localhost:3000
+
+ORDEM RESUMIDA DOS COMANDOS:
+   git clone https://github.com/Ytalosrs/SistemaSimuladoDockerizado.git
+   cd SistemaSimuladoDockerizado
+   cp .env.example .env          # ajuste as variáveis conforme necessário
+   docker-compose up -d --build
+   npm install
+   npx prisma generate
+   npx prisma migrate dev
+   npm run dev
+
+Em caso de erro no Prisma por banco ainda não estar pronto, aguarde alguns segundos
+após o docker-compose up e tente novamente.
+```
 Defina aqui a licença do projeto (por exemplo, MIT, Apache 2.0, etc.).  
 Enquanto não houver arquivo `LICENSE`, considere este projeto em estado de rascunho/estudo. [page:1]
