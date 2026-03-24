@@ -1,0 +1,7 @@
+tunnel: simulado-tunnel
+credentials-file: C:\Users\User\.cloudflared\e13a088e-60f8-4061-a75f-14425951c583.json
+
+ingress:
+  - hostname: localhost
+    service: http://localhost:3000
+  - service: http_status:404
