@@ -7,14 +7,21 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum SimuladoType {
+  v1
+  v2
+  v3
+  v4
+}
+
 model Question {
-  id            String   @id @default(uuid())
+  id            String       @id @default(uuid())
   content       String
   options       String[]
-  correctAnswer String   @map("correct_answer")
+  correctAnswer String       @map("correct_answer")
   explanation   String?
-  simuladoType  String   @default("v2") @map("simulado_type")
-  createdAt     DateTime @default(now())
+  simuladoType  SimuladoType @default(v2) @map("simulado_type")
+  createdAt     DateTime     @default(now())
   answers       Answer[]
 }
 

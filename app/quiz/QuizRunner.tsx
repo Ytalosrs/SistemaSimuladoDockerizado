@@ -12,10 +12,11 @@ import ConfirmModal from '@/components/quiz/ConfirmModal'
 import UserNameForm from '@/components/quiz/UserNameForm'
 import { Question } from '@/lib/types'
 import { validateAnswer, isMultiSelect } from '@/lib/utils/validation'
+import { SimuladoType } from '@prisma/client'
 
 interface QuizRunnerProps {
     questions: Question[]
-    simuladoType: string
+    simuladoType: SimuladoType
 }
 
 export default function QuizRunner({ questions, simuladoType }: QuizRunnerProps) {

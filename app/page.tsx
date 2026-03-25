@@ -5,6 +5,7 @@ import { useState, useEffect } from 'react'
 import ThemeToggle from '@/components/ThemeToggle'
 import { SimuladoProgress, SimuladoInfo } from '@/lib/types'
 import { getQuizStatus } from '@/lib/utils/formatting'
+import { SimuladoType } from '@prisma/client'
 
 export default function Home() {
   const [progressData, setProgressData] = useState<SimuladoProgress>({})
@@ -19,28 +20,28 @@ export default function Home() {
 
   const simulados: SimuladoInfo[] = [
     {
-      id: 'v1',
+      id: SimuladoType.v1,
       title: 'Simulado V1',
       description: '60 questões - 90 min',
       icon: '1',
       color: '#00bcd4'
     },
     {
-      id: 'v2',
+      id: SimuladoType.v2,
       title: 'Simulado V2',
       description: '60 questões - 90 min',
       icon: '2',
       color: '#9c27b0'
     },
     {
-      id: 'v3',
+      id: SimuladoType.v3,
       title: 'Simulado V3',
       description: '60 questões - 90 min',
       icon: '3',
       color: '#ff9800'
     },
     {
-      id: 'v4',
+      id: SimuladoType.v4,
       title: 'Simulado V4',
       description: '60 questões - 90 min',
       icon: '4',

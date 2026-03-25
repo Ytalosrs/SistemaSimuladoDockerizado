@@ -1,3 +1,5 @@
+import { SimuladoType } from '@prisma/client'
+
 // Tipos centralizados do sistema de simulados
 
 export interface Question {
@@ -6,7 +8,7 @@ export interface Question {
   options: string[]
   correctAnswer: string
   explanation?: string | null
-  simuladoType?: string
+  simuladoType?: SimuladoType
   createdAt?: Date
 }
 
@@ -49,7 +51,7 @@ export interface SimuladoProgress {
 }
 
 export interface SimuladoInfo {
-  id: string
+  id: SimuladoType
   title: string
   description: string
   icon: string

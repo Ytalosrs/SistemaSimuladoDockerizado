@@ -1,5 +1,6 @@
 import { prisma } from '@/lib/prisma'
 import QuizRunner from './QuizRunner'
+import { SimuladoType } from '@prisma/client'
 
 export const dynamic = 'force-dynamic'
 
@@ -10,14 +11,13 @@ export default async function QuizPage({
 }) {
     const { type } = await searchParams
     const normalizedType = type?.toLowerCase()
-    const simuladoType = normalizedType === 'v4' ? 'v4' : (normalizedType === 'v3' ? 'v3' : (normalizedType === 'v1' ? 'v1' : 'v2'))
+    const simuladoType = normalizedType === 'v4' ? SimuladoType.v4 : (normalizedType === 'v3' ? SimuladoType.v3 : (normalizedType === 'v1' ? SimuladoType.v1 : SimuladoType.v2))
 
     const questions = await prisma.question.findMany({
         where: {
             simuladoType
-        }
-        // Fetch all or random?
-        // take: 60
+        },
+        take: 60
     })
 
     // Randomize questions using Fisher-Yates shuffle algorithm
